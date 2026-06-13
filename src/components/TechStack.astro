@@ -1,0 +1,33 @@
+---
+import { skillGroups } from '../data/skills';
+---
+
+<section id="expertise" class="section border-line bg-ink-900 border-t">
+  <div class="container-page">
+    <div class="max-w-2xl">
+      <span class="eyebrow">Toolbox</span>
+      <h2 class="mt-3 text-3xl font-bold sm:text-4xl">Technical expertise</h2>
+      <p class="text-fg-muted mt-4 text-lg">
+        Battle-tested across regulated finance, security and SaaS — on AWS, Azure, on-prem and
+        hybrid.
+      </p>
+    </div>
+
+    <div class="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      {
+        skillGroups.map((g) => (
+          <div class="card p-6">
+            <h3 class="text-fg-subtle text-sm font-semibold tracking-wide uppercase">
+              {g.category}
+            </h3>
+            <ul class="mt-4 flex flex-wrap gap-2">
+              {g.items.map((item) => (
+                <li class="chip">{item}</li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

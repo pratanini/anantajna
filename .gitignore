@@ -1,0 +1,33 @@
+# build output
+dist/
+.astro/
+
+# dependencies
+node_modules/
+
+# logs
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# environment variables
+.env
+.env.production
+.env*.local
+
+# macOS
+.DS_Store
+
+# playwright
+test-results/
+playwright-report/
+playwright/.cache/
+
+# editor
+.vscode/*
+!.vscode/extensions.json
+.idea/
+
+# wrangler
+.wrangler/

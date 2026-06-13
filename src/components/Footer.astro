@@ -1,0 +1,27 @@
+---
+import { site } from '../data/site';
+const year = new Date().getFullYear();
+---
+
+<footer class="border-line border-t">
+  <div class="container-page flex flex-col items-center justify-between gap-6 py-10 sm:flex-row">
+    <div class="text-center sm:text-left">
+      <a href="#top" class="font-display gradient-text text-lg font-bold">{site.name}</a>
+      <p class="text-fg-subtle mt-1 text-sm">{site.meaning}</p>
+    </div>
+
+    <div class="text-fg-muted flex items-center gap-5 text-sm">
+      <a href={`mailto:${site.email}`} class="hover:text-fg transition-colors">Email</a>
+      <a href={site.linkedin} target="_blank" rel="noopener" class="hover:text-fg transition-colors"
+        >LinkedIn</a
+      >
+      <a href="#services" class="hover:text-fg transition-colors">Services</a>
+    </div>
+  </div>
+  <div
+    class="container-page border-line text-fg-subtle border-t py-5 text-center text-xs sm:text-left"
+  >
+    © {year}
+    {site.name} · {site.person}. All rights reserved.
+  </div>
+</footer>
