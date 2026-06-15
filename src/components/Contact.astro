@@ -1,9 +1,9 @@
 ---
 import { site } from '../data/site';
 
-// Public, build-time keys (safe to expose). Set as PUBLIC_* env vars in CI.
+// Public Web3Forms access key (safe to expose). Set as a PUBLIC_* env var in CI.
+// Spam protection is handled by the hidden honeypot field below (no captcha).
 const web3formsKey = import.meta.env.PUBLIC_WEB3FORMS_KEY ?? '';
-const turnstileKey = import.meta.env.PUBLIC_TURNSTILE_SITEKEY ?? '';
 const formEnabled = web3formsKey.length > 0;
 
 // Client-side AJAX submit (sent raw via set:html so it isn't bundled/processed).
@@ -162,10 +162,6 @@ const formScript = `
             />
           </label>
 
-          {turnstileKey && (
-            <div class="cf-turnstile" data-sitekey={turnstileKey} data-theme="dark" />
-          )}
-
           <button type="submit" class="btn btn-primary mt-1 w-full">
             <span data-label>Send message</span>
           </button>
@@ -188,11 +184,5 @@ const formScript = `
     }
   </div>
 </section>
-
-{
-  turnstileKey && (
-    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer is:inline />
-  )
-}
 
 {formEnabled && <script is:inline set:html={formScript} />}
