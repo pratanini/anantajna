@@ -85,8 +85,8 @@ On push to `main`: the same gate runs, then — only if green — it deploys to 
 3. **GitHub secrets** — repo → Settings → Secrets and variables → Actions → add
    `CLOUDFLARE_API_TOKEN`, `CLOUDFLARE_ACCOUNT_ID`, and (optionally) `PUBLIC_WEB3FORMS_KEY`,
    `PUBLIC_TURNSTILE_SITEKEY`.
-4. **First deploy** — push to `main`. The workflow creates the Pages project `anantajna` on the
-   first `wrangler pages deploy`.
+4. **First deploy** — push to `main`. The workflow's "Ensure Pages project exists" step creates the
+   `anantajna` Pages project on the first run, then deploys to it.
 5. **Custom domain** — Cloudflare dashboard → Workers & Pages → `anantajna` → Custom domains → add
    `anantajna.com` and `www.anantajna.com`. DNS records are created automatically (the zone is
    already in Cloudflare). Add a redirect rule for `www` → apex.
