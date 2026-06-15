@@ -12,18 +12,6 @@ export type Role = {
 
 export const roles: Role[] = [
   {
-    company: 'Uphillhealth',
-    title: 'Platform Engineer',
-    period: 'Oct 2025 — Present',
-    location: 'Netherlands',
-    current: true,
-    highlights: [
-      'Migrating manually managed AWS accounts to Account Factory for Terraform (AFT).',
-      'Consolidating multiple client accounts into central dev, staging and production.',
-      'Integrating observability into every application with minimal developer effort.',
-    ],
-  },
-  {
     company: 'Saxo Bank',
     title: 'Tech Lead — Observability Platforms',
     period: 'May 2023 — Oct 2025',
